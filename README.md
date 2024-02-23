@@ -18,11 +18,15 @@ You need to have Cog and Docker installed to run this model locally.
 
 To build the docker image with cog and run a prediction:
 
-```cog predict -i task="Given a web search query, retrieve relevant passages that answer the query" -i query="how much protein should a female eat" -i document="As a general guideline, the CDC's average requirement of protein for women ages 19 to 70 is 46 grams per day. But, as you can see from this chart, you'll need to increase that if you're expecting or training for a marathon. Check out the chart below to see how much protein you should be eating each day." -i normalize=True```
+```
+cog predict -i task="Given a web search query, retrieve relevant passages that answer the query" -i query="how much protein should a female eat" -i document="As a general guideline, the CDC's average requirement of protein for women ages 19 to 70 is 46 grams per day. But, as you can see from this chart, you'll need to increase that if you're expecting or training for a marathon. Check out the chart below to see how much protein you should be eating each day." -i normalize=True
+```
 
 To start a server and send requests to your locally or remotely deployed API:
 
-```cog run -p 5000 python -m cog.server.http```
+```
+cog run -p 5000 python -m cog.server.http
+```
 
 To generate text embeddings, you must supply a document in the form of a string. Additionally, you can input a query to calculate the similarity score, but it's advisable to include a task definition as previously mentioned. When both a query (combined with a task definition) and a document are provided, the output will include text embeddings (.npy) for each, along with a similarity score. The API input arguments are as follows:
 
@@ -36,7 +40,7 @@ To generate text embeddings, you must supply a document in the form of a string.
 Using this model for inputs longer than 4096 tokens is not recommended.
 
 # Citation
-``````
+```
 @article{wang2023improving,
   title={Improving Text Embeddings with Large Language Models},
   author={Wang, Liang and Yang, Nan and Huang, Xiaolong and Yang, Linjun and Majumder, Rangan and Wei, Furu},

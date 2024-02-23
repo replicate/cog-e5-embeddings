@@ -1,0 +1,13 @@
+build:
+  cuda: "11.7"
+  gpu: true
+  python_version: "3.9"
+  python_packages:
+    - "torch==2.0.1"
+    - "transformers[torch]==4.35.0"
+    - "accelerate==0.21.0"
+  run:
+    - curl -o /usr/local/bin/pget -L https://github.com/replicate/pget/releases/download/v0.6.0/pget_Linux_x86_64
+    - chmod +x /usr/local/bin/pget
+
+predict: "predict.py:Predictor"
